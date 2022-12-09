@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Feedback</title>
+    <meta charset="utf-8" />
+  </head>
+  <style>
+    body {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 20px;
+      width: 400px;
+      height: 350px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(234, 217, 236);
+    }
+    input[type="submit"] {
+      background-color: #777edc; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 50%;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    input[type="submit"]:hover {
+      background-color: #3c449b;
+    }
+
+    input[type="submit"]:active {
+      background-color: #3c449b;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
+  <body>
+    <form action="/confirmation" method="post">
+      <h2>Thanks for submitting! We have stored your info in your database!</h2>
+      <h3>Click to check what you did before</h3>
+      <input type="submit" value="Check What I Did Before!" />
+      <br />
+      <br />
+    </form>
+  </body>
+</html>

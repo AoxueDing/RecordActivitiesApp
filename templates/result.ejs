@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Result</title>
+    <meta charset="utf-8" />
+  </head>
+  <style>
+    body {
+      text-align: center; 
+      background-color: #fff;
+      border-radius: 20px;
+      width: 500px;
+      height: 450px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(234, 217, 236);
+    }
+    input[type="submit"] {
+      background-color: #777edc; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 50%;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    input[type="submit"]:hover {
+      background-color: #3c449b;
+    }
+
+    input[type="submit"]:active {
+      background-color: #3c449b;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+
+    label{
+    line-height: 30px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right:15px;
+    color: #887878;
+}
+input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    position: relative;
+}
+input[type="radio"]:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #887878;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+input[type="radio"]:checked:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #c59c5a;
+    background:#c59c5a;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+input[type="radio"]:checked:after{
+    content: '';
+    width: 10px;
+    height:5px;
+    border: 2px solid white;
+    border-top: transparent;
+    border-right: transparent;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left:5px;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+}
+.radio_type:checked+label{
+    color: #c59c5a;
+}
+  </style>
+  <body>
+    <form action="/result" method="post">
+      <h2>Here is what I got for you!</h2>
+      <h1 style="color:rgb(97, 74, 211);"></h1style><%- activity %></h1>
+      <h3 style="color:rgb(3, 1, 15);"></h1style>More info about activity: </h3>
+      <h3 style="color:rgb(97, 74, 211);"></h1style>Activity Type: <%- type %></h3>
+      <h3 style="color:rgb(97, 74, 211);"></h1style>Activity accessibility: <%- accessibility %></h3>
+      <h3 style="color:rgb(97, 74, 211);"></h1style>Activity Participant: <%- participant %></h3>
+      <h2>Tell me your thoughts!  </h2>
+     <input type = "radio" name = "feeling"/> <label style="font-size: 30px;" >I want to do it </label><br>
+      <input type = "radio" name = "feeling"/>  <label style="font-size: 30px;">Refresh to get another one</label>
+      <br/>
+      <br/>
+      <input type="submit" value="I want to write my feelings and note down!" />
+    </form>
+  </body>
+</html>
