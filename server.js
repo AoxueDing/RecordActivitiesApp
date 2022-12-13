@@ -6,7 +6,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const express = require("express"); 
 const app = express();  
-app.listen(portNumber, "0.0.0.0")
+app.listen(portNumber)
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
 console.log(`Web server is running at http://localhost:${portNumber}`);
@@ -85,8 +85,15 @@ async function insertDataHelper(client, databaseAndCollection, info) {
     const result = await client
         .db(databaseAndCollection.db)
         .collection(databaseAndCollection.collection)
-        .insertOne(info)
-    }
+        .insertOne(info);
+    client.connect(err => {
+    if(err){ console.error(err); return false;}
+    // connection to mongo is successful, listen for requests
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
+});
+}
 
 app.post("/confirmation", (request, response) => {
     showall()

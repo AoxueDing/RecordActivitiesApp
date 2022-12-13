@@ -7,4 +7,5 @@ Description: This is an app that could record user's activity. If the user feel
 
 API links: http://www.boredapi.com/api/activity/ 
 
+Website Link: https://distinct-pink-bass.cyclic.app
 YouTube Demo Video: 
