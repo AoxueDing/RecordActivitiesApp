@@ -86,13 +86,6 @@ async function insertDataHelper(client, databaseAndCollection, info) {
         .db(databaseAndCollection.db)
         .collection(databaseAndCollection.collection)
         .insertOne(info);
-    client.connect(err => {
-    if(err){ console.error(err); return false;}
-    // connection to mongo is successful, listen for requests
-    app.listen(PORT, () => {
-        console.log("listening for requests");
-    })
-});
 }
 
 app.post("/confirmation", (request, response) => {
