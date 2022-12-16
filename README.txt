@@ -1,5 +1,6 @@
 Team Member: work individually 
-            Name: Aoxue Ding
+            Name: Aoxue Ding 
+            Student Id: ading1
 
 Description: This is an app that could record user's daily activity. 
              Furthermore, If the user feel bored or they don't know what to do,
